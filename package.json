@@ -16,6 +16,7 @@
     "format:check": "prettier --check \"{components,content,docs,pages,styles,utils}/**/*.{js,jsx,ts,tsx,css,scss,json,yaml,md}\""
   },
   "dependencies": {
+    "@heroicons/react": "^1.0.6",
     "next": "latest",
     "next-pwa": "^5.4.4",
     "nextjs-progressbar": "^0.0.13",

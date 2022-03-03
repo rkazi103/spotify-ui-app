@@ -4,16 +4,16 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint --fix '{components,pages,utils}/**/*.{js,jsx,ts,tsx}'",
-    "lint:check": "eslint '{components,pages,utils}/**/*.{js,jsx,ts,tsx}'",
+    "lint": "eslint --fix '{components,pages,utils,lib}/**/*.{js,jsx,ts,tsx}'",
+    "lint:check": "eslint '{components,pages,utils,lib}/**/*.{js,jsx,ts,tsx}'",
     "prepare": "husky install",
     "pre-commit": "yarn run format && git add -A .",
     "release": "standard-version",
     "release:minor": "standard-version --release-as minor",
     "release:patch": "standard-version --release-as patch",
     "release:major": "standard-version --release-as major",
-    "format": "prettier --write \"{components,content,docs,pages,styles,utils}/**/*.{js,jsx,ts,tsx,css,scss,json,yaml,md}\"",
-    "format:check": "prettier --check \"{components,content,docs,pages,styles,utils}/**/*.{js,jsx,ts,tsx,css,scss,json,yaml,md}\""
+    "format": "prettier --write \"{components,content,docs,pages,styles,utils,lib}/**/*.{js,jsx,ts,tsx,css,scss,json,yaml,md}\"",
+    "format:check": "prettier --check \"{components,content,docs,pages,styles,utils,lib}/**/*.{js,jsx,ts,tsx,css,scss,json,yaml,md}\""
   },
   "dependencies": {
     "@heroicons/react": "^1.0.6",
@@ -21,12 +21,14 @@
     "next-pwa": "^5.4.4",
     "nextjs-progressbar": "^0.0.13",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "spotify-web-api-node": "^5.0.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.1.0",
     "@commitlint/config-conventional": "^16.0.0",
     "@types/react": "^17.0.38",
+    "@types/spotify-web-api-node": "^5.0.7",
     "autoprefixer": "^10.4.2",
     "eslint": "^8.7.0",
     "eslint-config-next": "^12.0.8",

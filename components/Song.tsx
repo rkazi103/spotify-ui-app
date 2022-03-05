@@ -35,7 +35,7 @@ const Song: NextComponentType<NextPageContext, {}, SongProps> = ({
       <div className="flex items-center space-x-4">
         <p>{order + 1}</p>
         <img
-          src={track.track.album.images?.[0].url}
+          src={track.track.album.images?.[0].url as string}
           alt="Picture of song"
           className="h-10 w-10"
         />

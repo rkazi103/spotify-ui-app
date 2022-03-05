@@ -1,5 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { NextComponentType, NextPageContext } from "next";
+import { useRecoilState } from "recoil";
+import { currentTrackState, isPlayingState } from "../atoms/songAtom";
 import useSpotify from "../hooks/useSpotify";
 import { millisToMinutesAndSeconds } from "../lib/time";
 
@@ -13,9 +15,23 @@ const Song: NextComponentType<NextPageContext, {}, SongProps> = ({
   track,
 }) => {
   const spotifyApi = useSpotify();
+  const [currentTrackId, setCurrentTrackId] = useRecoilState(currentTrackState);
+  const [isPlaying, setIsPlaying] = useRecoilState(isPlayingState);
+
+  const playSong = () => {
+    setCurrentTrackId(track.track.id);
+    setIsPlaying(true);
+
+    spotifyApi.play({
+      uris: [track.track.uri],
+    });
+  };
 
   return (
-    <div className="grid cursor-pointer grid-cols-2 rounded-lg py-4 px-5 text-gray-500 hover:bg-gray-900">
+    <div
+      className="grid cursor-pointer grid-cols-2 rounded-lg py-4 px-5 text-gray-500 hover:bg-gray-900"
+      onClick={playSong}
+    >
       <div className="flex items-center space-x-4">
         <p>{order + 1}</p>
         <img

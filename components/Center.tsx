@@ -8,6 +8,7 @@ import { useRecoilState, useRecoilValue } from "recoil";
 import { playlistIdState } from "../atoms/playlistIdAtom";
 import { playlistState } from "../atoms/playlistAtom";
 import useSpotify from "../hooks/useSpotify";
+import Songs from "./Songs";
 
 const colors = [
   "from-indigo-500",
@@ -54,7 +55,24 @@ const Center: NextComponentType = () => {
 
       <section
         className={`flex h-80 items-end space-x-7 bg-gradient-to-b ${color} to-black p-8 text-white`}
-      ></section>
+      >
+        <img
+          src={playlist?.images?.[0]?.url}
+          alt=""
+          className="h-44 w-44 shadow-2xl"
+        />
+
+        <div>
+          <p>PLAYLIST</p>
+          <h2 className="text-2xl font-bold md:text-3xl xl:text-5xl">
+            {playlist?.name}
+          </h2>
+        </div>
+      </section>
+
+      <section>
+        <Songs />
+      </section>
     </div>
   );
 };

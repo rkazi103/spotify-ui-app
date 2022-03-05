@@ -26,8 +26,6 @@ const Sidebar: NextComponentType = () => {
       spotifyApi.getUserPlaylists().then(data => setPlaylists(data.body.items));
   }, [session, spotifyApi]);
 
-  console.log(playlists);
-
   return (
     <div className="hidden h-screen overflow-y-scroll border-r border-gray-900 p-5 text-xs text-gray-500 scrollbar-hide sm:max-w-[12rem] md:inline-flex lg:max-w-[15rem] lg:text-sm">
       <div className="space-y-4">

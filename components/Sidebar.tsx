@@ -11,7 +11,7 @@ import { signOut, useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import useSpotify from "../hooks/useSpotify";
 import { useRecoilState } from "recoil";
-import { playlistIdState } from "../atoms/playlistAtom";
+import { playlistIdState } from "../atoms/playlistIdAtom";
 
 const Sidebar: NextComponentType = () => {
   const { data: session } = useSession();

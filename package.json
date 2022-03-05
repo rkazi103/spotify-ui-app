@@ -4,16 +4,16 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint --fix '{components,pages,utils,lib}/**/*.{js,jsx,ts,tsx}'",
-    "lint:check": "eslint '{components,pages,utils,lib}/**/*.{js,jsx,ts,tsx}'",
+    "lint": "eslint --fix '{components,pages,utils,lib,hooks}/**/*.{js,jsx,ts,tsx}'",
+    "lint:check": "eslint '{components,pages,utils,lib,hooks}/**/*.{js,jsx,ts,tsx}'",
     "prepare": "husky install",
     "pre-commit": "yarn run format && git add -A .",
     "release": "standard-version",
     "release:minor": "standard-version --release-as minor",
     "release:patch": "standard-version --release-as patch",
     "release:major": "standard-version --release-as major",
-    "format": "prettier --write \"{components,content,docs,pages,styles,utils,lib}/**/*.{js,jsx,ts,tsx,css,scss,json,yaml,md}\"",
-    "format:check": "prettier --check \"{components,content,docs,pages,styles,utils,lib}/**/*.{js,jsx,ts,tsx,css,scss,json,yaml,md}\""
+    "format": "prettier --write \"{components,content,docs,pages,styles,utils,lib,hooks}/**/*.{js,jsx,ts,tsx,css,scss,json,yaml,md}\"",
+    "format:check": "prettier --check \"{components,content,docs,pages,styles,utils,lib,hooks}/**/*.{js,jsx,ts,tsx,css,scss,json,yaml,md}\""
   },
   "dependencies": {
     "@heroicons/react": "^1.0.6",

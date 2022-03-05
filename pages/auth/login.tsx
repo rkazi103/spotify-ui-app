@@ -10,7 +10,11 @@ type LoginProps = {
 const Login: NextPage<LoginProps> = ({ providers }) => {
   return (
     <div className="flex min-h-screen w-full flex-col items-center justify-center bg-black">
-      <img src="/images/spotify.png" alt="Spotify Logo" className="mb-5 w-52" />
+      <img
+        src="https://i.imgur.com/fPuEa9V.png"
+        alt="Spotify Logo"
+        className="mb-5 w-52"
+      />
 
       {providers &&
         Object.values(providers).map((provider: Provider) => (

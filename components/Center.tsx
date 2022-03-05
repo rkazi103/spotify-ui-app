@@ -19,7 +19,7 @@ const colors = [
   "from-yellow-500",
   "from-pink-500",
 ];
-
+//2:41:10
 const Center: NextComponentType = () => {
   const { data: session } = useSession();
   const [color, setColor] = useState<string>("");
@@ -29,7 +29,7 @@ const Center: NextComponentType = () => {
 
   useEffect(() => {
     setColor(shuffle(colors).pop() as string);
-  }, []);
+  }, [playlistId]);
 
   useEffect(() => {
     spotifyApi
@@ -41,7 +41,7 @@ const Center: NextComponentType = () => {
   return (
     <div className="flex-grow">
       <header className="absolute top-5 right-8">
-        <div className="flex cursor-pointer items-center space-x-3 rounded-full bg-red-300 p-1 pr-2 opacity-90 hover:opacity-80">
+        <div className="flex cursor-pointer items-center space-x-3 rounded-full bg-black p-1 pr-2 text-white opacity-90 hover:opacity-80">
           <img
             // TODO: fix image
             src="https://lh3.googleusercontent.com/ogw/ADea4I6ue6ul3ozCcUYNy63qPsdyJ5zRRK5GenxA4mELWg=s64-c-mo"

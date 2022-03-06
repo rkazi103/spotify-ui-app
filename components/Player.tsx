@@ -106,6 +106,18 @@ const Player: NextComponentType = () => {
         <FastForwardIcon className="button" />
         <ReplyIcon className="button" />
       </div>
+
+      <div className="flex items-center justify-end space-x-3 pr-5 md:space-x-4">
+        <VolumeDownIcon className="button" />
+        <input
+          className="w-14 md:w-28"
+          type="range"
+          value={volume}
+          min={0}
+          max={100}
+        />
+        <VolumeUpIcon className="button" />
+      </div>
     </div>
   );
 };

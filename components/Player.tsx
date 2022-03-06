@@ -1,4 +1,17 @@
 /* eslint-disable @next/next/no-img-element */
+import {
+  RewindIcon,
+  SwitchHorizontalIcon,
+  FastForwardIcon,
+  PauseIcon,
+  PlayIcon,
+  ReplyIcon,
+  VolumeUpIcon,
+} from "@heroicons/react/solid";
+import {
+  HeartIcon,
+  VolumeUpIcon as VolumeDownIcon,
+} from "@heroicons/react/outline";
 import { NextComponentType } from "next";
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
@@ -41,7 +54,17 @@ const Player: NextComponentType = () => {
     songInfo,
   ]);
 
-  // https://youtu.be/3xrko3GpYoU?t=11991
+  const handlePlayPause = async () => {
+    spotifyApi.getMyCurrentPlaybackState().then(data => {
+      if (data.body.is_playing) {
+        spotifyApi.pause();
+        setIsPlaying(false);
+      } else {
+        spotifyApi.play();
+        setIsPlaying(true);
+      }
+    });
+  };
 
   return (
     <div className="grid h-24 grid-cols-3 bg-gradient-to-b from-black to-gray-900 px-2 text-xs text-white md:px-8 md:text-base">
@@ -61,6 +84,27 @@ const Player: NextComponentType = () => {
           <h3>{songInfo?.name || "Caelisa"}</h3>
           <p>{songInfo?.artists?.[0]?.name || "Max Suaer"}</p>
         </div>
+      </div>
+
+      {/* Center */}
+      <div className="flex items-center justify-evenly">
+        <SwitchHorizontalIcon className="button" />
+        <RewindIcon className="button" />
+
+        {isPlaying ? (
+          <PauseIcon
+            onClick={() => handlePlayPause()}
+            className="button h-10 w-10"
+          />
+        ) : (
+          <PlayIcon
+            onClick={() => handlePlayPause()}
+            className="button h-10 w-10"
+          />
+        )}
+
+        <FastForwardIcon className="button" />
+        <ReplyIcon className="button" />
       </div>
     </div>
   );

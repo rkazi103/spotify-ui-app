@@ -8,17 +8,15 @@ import {
   ReplyIcon,
   VolumeUpIcon,
 } from "@heroicons/react/solid";
-import {
-  HeartIcon,
-  VolumeUpIcon as VolumeDownIcon,
-} from "@heroicons/react/outline";
+import { VolumeUpIcon as VolumeDownIcon } from "@heroicons/react/outline";
 import { NextComponentType } from "next";
 import { useSession } from "next-auth/react";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 import { currentTrackState, isPlayingState } from "../atoms/songAtom";
 import useSongInfo from "../hooks/useSongInfo";
 import useSpotify from "../hooks/useSpotify";
+import { debounce } from "lodash";
 
 const Player: NextComponentType = () => {
   const spotifyApi = useSpotify();
@@ -53,6 +51,19 @@ const Player: NextComponentType = () => {
     setVolume,
     songInfo,
   ]);
+
+  const debouncedAdjustVolume = useCallback(
+    (volume: number) =>
+      debounce(
+        (vol = volume) => spotifyApi.setVolume(volume).catch(err => {}),
+        500
+      ),
+    [spotifyApi]
+  );
+
+  useEffect(() => {
+    if (volume > 0 && volume < 100) debouncedAdjustVolume(volume);
+  }, [volume, debouncedAdjustVolume]);
 
   const handlePlayPause = async () => {
     spotifyApi.getMyCurrentPlaybackState().then(data => {
@@ -108,15 +119,22 @@ const Player: NextComponentType = () => {
       </div>
 
       <div className="flex items-center justify-end space-x-3 pr-5 md:space-x-4">
-        <VolumeDownIcon className="button" />
+        <VolumeDownIcon
+          onClick={() => volume > 10 && setVolume(volume - 10)}
+          className="button"
+        />
         <input
           className="w-14 md:w-28"
           type="range"
           value={volume}
+          onChange={e => setVolume(Number(e.target.value))}
           min={0}
           max={100}
         />
-        <VolumeUpIcon className="button" />
+        <VolumeUpIcon
+          onClick={() => volume < 100 && setVolume(volume + 10)}
+          className="button"
+        />
       </div>
     </div>
   );

@@ -47,7 +47,7 @@ const Center: NextComponentType = () => {
         >
           <img
             // TODO: fix image
-            src="https://pickaface.net/gallery/avatar/20160625_050020_889_FAKE.png"
+            src={session?.user?.image as string}
             alt="Profile picture for user"
             className="h-10 w-10 rounded-full"
           />

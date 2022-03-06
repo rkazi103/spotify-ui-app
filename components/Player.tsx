@@ -82,18 +82,14 @@ const Player: NextComponentType = () => {
       {/* Left */}
       <div className="flex items-center space-x-4">
         <img
-          // FIXME: remove in prod
-          src={
-            songInfo?.album?.images?.[0].url ||
-            "https://i.scdn.co/image/ab67616d0000b2731b6102b34cc4de238d079f83"
-          }
+          src={songInfo?.album?.images?.[0].url}
           alt="song's album image"
           className="hidden h-10 w-10 md:inline"
         />
 
         <div>
-          <h3>{songInfo?.name || "Caelisa"}</h3>
-          <p>{songInfo?.artists?.[0]?.name || "Max Suaer"}</p>
+          <h3>{songInfo?.name}</h3>
+          <p>{songInfo?.artists?.[0]?.name}</p>
         </div>
       </div>
 

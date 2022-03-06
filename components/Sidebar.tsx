@@ -7,7 +7,7 @@ import {
   HeartIcon,
   RssIcon,
 } from "@heroicons/react/outline";
-import { signOut, useSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import useSpotify from "../hooks/useSpotify";
 import { useRecoilState } from "recoil";

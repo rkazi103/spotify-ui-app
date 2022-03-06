@@ -27,12 +27,8 @@ export default NextAuth({
         };
       }
 
-      if (Date.now() < (token.accessTokenExpires as number)) {
-        console.log("EXISTING TOKEN VALID ✅");
-        return token;
-      }
+      if (Date.now() < (token.accessTokenExpires as number)) return token;
 
-      console.log("ACCESS TOKEN EXPIRED ❌, CREATING NEW ONE");
       return refreshAccessToken(token);
     },
 

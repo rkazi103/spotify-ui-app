@@ -10,8 +10,8 @@ const Home: NextPage = () => {
   return (
     <div className="h-screen overflow-hidden bg-black">
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Spotify Clone</title>
+        <link rel="icon" href="/favicon.png" />
       </Head>
 
       <main className="flex">

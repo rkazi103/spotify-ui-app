@@ -2,6 +2,7 @@
 import type { GetServerSideProps, NextPage } from "next";
 import type { Provider } from "next-auth/providers";
 import { getProviders, signIn } from "next-auth/react";
+import Head from "next/head";
 
 type LoginProps = {
   providers: object;
@@ -10,6 +11,11 @@ type LoginProps = {
 const Login: NextPage<LoginProps> = ({ providers }) => {
   return (
     <div className="flex min-h-screen w-full flex-col items-center justify-center bg-black">
+      <Head>
+        <title>Login</title>
+        <link rel="icon" href="/favicon.png" />
+      </Head>
+
       <img
         src="https://i.imgur.com/fPuEa9V.png"
         alt="Spotify Logo"

@@ -1,3 +1,12 @@
+# [0.4.0](https://github.com/rkazi103/spotify-ui-app/compare/v0.3.0...v0.4.0) (2022-03-07)
+
+
+### Features
+
+* added pwa data ([5dae38c](https://github.com/rkazi103/spotify-ui-app/commit/5dae38c588ab7b099c1b2c1334bc1357c76caac2))
+
+
+
 # [0.3.0](https://github.com/rkazi103/spotify-ui-app/compare/v0.2.0...v0.3.0) (2022-03-06)
 
 

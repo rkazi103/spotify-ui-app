@@ -1,12 +1,12 @@
 {
-  "theme_color": "#000",
-  "background_color": "#fff",
-  "display": "standalone",
+  "theme_color": "",
+  "background_color": "#000",
+  "display": "browser",
   "scope": "/",
   "start_url": "/",
-  "name": "Next starter",
-  "short_name": "Next starter",
-  "description": "This is a boilerplate code with everything you need with nextjs",
+  "name": "Spotify Clone",
+  "short_name": "Spotify Clone",
+  "description": "A clone of Spotify to show off my web dev skills",
   "icons": [
     {
       "src": "/icon-192x192.png",

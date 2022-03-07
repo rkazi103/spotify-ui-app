@@ -1,3 +1,16 @@
+# [0.3.0](https://github.com/rkazi103/spotify-ui-app/compare/v0.2.0...v0.3.0) (2022-03-06)
+
+
+### Features
+
+* built center of player ([411e611](https://github.com/rkazi103/spotify-ui-app/commit/411e611db05bff1e86e5bba3d00b14869e9e0e4f))
+* built left side of player ([91f712d](https://github.com/rkazi103/spotify-ui-app/commit/91f712d94820212f9648c425838a7d9e6f5dacb9))
+* built right side of player ([5fc4be7](https://github.com/rkazi103/spotify-ui-app/commit/5fc4be72893f8f2cd2c1efe591fcdd723122daa3))
+* implemented use song info hook ([45e1bbf](https://github.com/rkazi103/spotify-ui-app/commit/45e1bbfd084b474b00cbb7735b5ecf257363576b))
+* implemented volume functionality ([cfff74e](https://github.com/rkazi103/spotify-ui-app/commit/cfff74eb635a4d5846390967a9b7d2c70f33ce19))
+
+
+
 # [0.2.0](https://github.com/rkazi103/spotify-ui-app/compare/v0.1.0...v0.2.0) (2022-03-05)
 
 
